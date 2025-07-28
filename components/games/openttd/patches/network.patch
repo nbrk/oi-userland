@@ -1,0 +1,20 @@
+diff -nru openttd-14.1.orig/src/network/core/os_abstraction.cpp openttd-14.1/src/network/core/os_abstraction.cpp
+--- openttd-14.1.orig/src/network/core/os_abstraction.cpp	пт мая  3 23:51:30 2024
++++ openttd-14.1/src/network/core/os_abstraction.cpp	пн июл. 14 11:31:26 2025
+@@ -166,13 +166,13 @@
+  */
+ bool SetReusePort(SOCKET d)
+ {
+-#ifdef _WIN32
+-	/* Windows has no SO_REUSEPORT, but for our usecases SO_REUSEADDR does the same job. */
++#ifndef SO_REUSEPORT
++    /* Windows and Solaris has no SO_REUSEPORT, but for our usecases SO_REUSEADDR does the same job. */
+ 	int reuse_port = 1;
+ 	return setsockopt(d, SOL_SOCKET, SO_REUSEADDR, (const char *)&reuse_port, sizeof(reuse_port)) == 0;
+ #else
+ 	int reuse_port = 1;
+-	return setsockopt(d, SOL_SOCKET, SO_REUSEPORT, &reuse_port, sizeof(reuse_port)) == 0;
++    return setsockopt(d, SOL_SOCKET, SO_REUSEPORT, &reuse_port, sizeof(reuse_port)) == 0;
+ #endif
+ }
+ 
