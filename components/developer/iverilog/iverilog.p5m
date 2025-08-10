@@ -1,0 +1,76 @@
+#
+# This file and its contents are supplied under the terms of the
+# Common Development and Distribution License ("CDDL"), version 1.0.
+# You may only use this file in accordance with the terms of version
+# 1.0 of the CDDL.
+#
+# A full copy of the text of the CDDL should have accompanied this
+# source.  A copy of the CDDL is also available via the Internet at
+# http://www.illumos.org/license/CDDL.
+#
+
+#
+# Copyright 2025 Nikolay Burkov <nbrk@linklevel.net>
+#
+
+set name=pkg.fmri value=pkg:/$(COMPONENT_FMRI)@$(IPS_COMPONENT_VERSION),$(BUILD_VERSION)
+set name=pkg.human-version value=$(HUMAN_VERSION)
+set name=pkg.summary value="$(COMPONENT_SUMMARY)"
+set name=info.classification value="$(COMPONENT_CLASSIFICATION)"
+set name=info.upstream-url value=$(COMPONENT_PROJECT_URL)
+set name=info.source-url value=$(COMPONENT_ARCHIVE_URL)
+set name=org.opensolaris.consolidation value=$(CONSOLIDATION)
+
+license $(COMPONENT_LICENSE_FILE) license='$(COMPONENT_LICENSE)'
+
+file path=usr/bin/iverilog
+file path=usr/bin/iverilog-vpi
+file path=usr/bin/vvp
+file path=usr/include/iverilog/_pli_types.h
+file path=usr/include/iverilog/acc_user.h
+file path=usr/include/iverilog/ivl_target.h
+file path=usr/include/iverilog/sv_vpi_user.h
+file path=usr/include/iverilog/veriuser.h
+file path=usr/include/iverilog/vpi_user.h
+file path=usr/lib/$(MACH64)/ivl/blif-s.conf
+file path=usr/lib/$(MACH64)/ivl/blif.conf
+file path=usr/lib/$(MACH64)/ivl/blif.tgt
+file path=usr/lib/$(MACH64)/ivl/cadpli.vpl
+file path=usr/lib/$(MACH64)/ivl/include/constants.vams
+file path=usr/lib/$(MACH64)/ivl/include/disciplines.vams
+file path=usr/lib/$(MACH64)/ivl/ivl
+file path=usr/lib/$(MACH64)/ivl/ivlpp
+file path=usr/lib/$(MACH64)/ivl/null-s.conf
+file path=usr/lib/$(MACH64)/ivl/null.conf
+file path=usr/lib/$(MACH64)/ivl/null.tgt
+file path=usr/lib/$(MACH64)/ivl/pcb-s.conf
+file path=usr/lib/$(MACH64)/ivl/pcb.conf
+file path=usr/lib/$(MACH64)/ivl/pcb.tgt
+file path=usr/lib/$(MACH64)/ivl/sizer-s.conf
+file path=usr/lib/$(MACH64)/ivl/sizer.conf
+file path=usr/lib/$(MACH64)/ivl/sizer.tgt
+file path=usr/lib/$(MACH64)/ivl/stub-s.conf
+file path=usr/lib/$(MACH64)/ivl/stub.conf
+file path=usr/lib/$(MACH64)/ivl/stub.tgt
+file path=usr/lib/$(MACH64)/ivl/system.vpi
+file path=usr/lib/$(MACH64)/ivl/v2005_math.vpi
+file path=usr/lib/$(MACH64)/ivl/v2009.vpi
+file path=usr/lib/$(MACH64)/ivl/va_math.vpi
+file path=usr/lib/$(MACH64)/ivl/vhdl-s.conf
+file path=usr/lib/$(MACH64)/ivl/vhdl.conf
+file path=usr/lib/$(MACH64)/ivl/vhdl.tgt
+file path=usr/lib/$(MACH64)/ivl/vhdl_sys.vpi
+file path=usr/lib/$(MACH64)/ivl/vhdl_textio.vpi
+file path=usr/lib/$(MACH64)/ivl/vhdlpp
+file path=usr/lib/$(MACH64)/ivl/vlog95-s.conf
+file path=usr/lib/$(MACH64)/ivl/vlog95.conf
+file path=usr/lib/$(MACH64)/ivl/vlog95.tgt
+file path=usr/lib/$(MACH64)/ivl/vpi_debug.vpi
+file path=usr/lib/$(MACH64)/ivl/vvp-s.conf
+file path=usr/lib/$(MACH64)/ivl/vvp.conf
+file path=usr/lib/$(MACH64)/ivl/vvp.tgt
+file path=usr/lib/$(MACH64)/libveriuser.a
+file path=usr/lib/$(MACH64)/libvpi.a
+file path=usr/share/man/man1/iverilog-vpi.1
+file path=usr/share/man/man1/iverilog.1
+file path=usr/share/man/man1/vvp.1
