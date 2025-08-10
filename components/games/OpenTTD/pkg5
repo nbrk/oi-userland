@@ -1,0 +1,23 @@
+{
+    "dependencies": [
+        "compress/xz",
+        "developer/icu",
+        "image/library/libpng16",
+        "library/c++/harfbuzz",
+        "library/icu-77",
+        "library/lzo",
+        "library/sdl2",
+        "library/zlib",
+        "system/library",
+        "system/library/fontconfig",
+        "system/library/freetype-2",
+        "system/library/g++-14-runtime",
+        "system/library/gcc-14-runtime",
+        "system/library/math",
+        "web/curl"
+    ],
+    "fmris": [
+        "games/OpenTTD"
+    ],
+    "name": "OpenTTD"
+}
