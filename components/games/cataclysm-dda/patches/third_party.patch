@@ -1,0 +1,30 @@
+diff -ru Cataclysm-DDA-0.H-RELEASE/src/third-party//flatbuffers/stl_emulation.h Cataclysm-DDA-0.H-RELEASE.patched/src/third-party//flatbuffers/stl_emulation.h
+--- Cataclysm-DDA-0.H-RELEASE/src/third-party//flatbuffers/stl_emulation.h	сб нояб. 23 06:08:02 2024
++++ Cataclysm-DDA-0.H-RELEASE.patched/src/third-party//flatbuffers/stl_emulation.h	вс авг. 17 17:58:42 2025
+@@ -626,7 +626,7 @@
+  private:
+   // This is a naive implementation with 'count_' member even if (Extent != dynamic_extent).
+   pointer const data_;
+-  const size_type count_;
++  size_type count_;
+ };
+ 
+  #if !defined(FLATBUFFERS_SPAN_MINIMAL)
+diff -ru Cataclysm-DDA-0.H-RELEASE/src/third-party//flatbuffers/util.h Cataclysm-DDA-0.H-RELEASE.patched/src/third-party//flatbuffers/util.h
+--- Cataclysm-DDA-0.H-RELEASE/src/third-party//flatbuffers/util.h	сб нояб. 23 06:08:02 2024
++++ Cataclysm-DDA-0.H-RELEASE.patched/src/third-party//flatbuffers/util.h	вс авг. 17 17:59:06 2025
+@@ -264,12 +264,12 @@
+ 
+ inline void strtoval_impl(int64_t *val, const char *str, char **endptr,
+                                  int base) {
+-    *val = __strtoll_impl(str, endptr, base);
++    *val = strtoll(str, endptr, base);
+ }
+ 
+ inline void strtoval_impl(uint64_t *val, const char *str, char **endptr,
+                                  int base) {
+-  *val = __strtoull_impl(str, endptr, base);
++  *val = strtoull(str, endptr, base);
+ }
+ 
+ inline void strtoval_impl(double *val, const char *str, char **endptr) {
